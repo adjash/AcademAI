@@ -20,10 +20,59 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <head>
+        <title>AcademAI – Your Personal AI Learning Assistant</title>
+        <meta
+          name="description"
+          content="Master any subject with personalized study plans, quizzes, and adaptive learning, powered by AI."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body className="bg-gray-50">
+        <header className="bg-white shadow">
+          <nav className="container mx-auto p-6">
+            <div className="flex justify-between items-center">
+              <div className="text-2xl font-bold text-blue-600">AcademAI</div>
+              <div>
+                <a
+                  href="#pricing"
+                  className="text-gray-700 hover:text-blue-600 px-4"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#faq"
+                  className="text-gray-700 hover:text-blue-600 px-4"
+                >
+                  FAQ
+                </a>
+                <button className="ml-4 bg-blue-600 text-white px-4 py-2 rounded-md">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        <main>{children}</main>
+
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white py-6 mt-12">
+          <div className="container mx-auto text-center">
+            <p className="text-sm">© 2024 AcademAI. All rights reserved.</p>
+            <div className="mt-4 space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                Terms of Service
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
